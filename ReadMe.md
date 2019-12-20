@@ -62,7 +62,7 @@
 
 **共用环境的目录：**　'/opt/'
 
-+ Q1: 如何使用共用的conda环境
++ **Q1**: 如何使用共用的conda环境
 
 + A1: 
 
@@ -99,7 +99,7 @@
   source activate [自己的环境名]
   ~~~
 
-+ Q2: 图形界面死机怎么办？
++ **Q2**: 图形界面死机怎么办？
 
 + A2: 重启图形界面后登录
 
@@ -113,6 +113,21 @@
     ~~~
   
   + 重新链接
+  
++ **Q3**: 使用pycharm配置独立的虚拟环境时，需要添加conda环境，但是在自身目录环境下的.conda/envs/username/bin下没有找到conda?
+
++ 解决方法
+
+    + 方法1: 直接添加公共目录下的conda添加环境为/opt/anaconda3/bin/conda
+
+    + 方法2: 拉一个软链接过来
+
+        ~~~bash
+        # 拉个软链接到自己的conda目录下　以我的用户名cyx为例
+        ln -s /opt/anaconda3/bin/conda ~/.conda/envs/cyxTest/bin/conda
+        ~~~
+
+        之后添加conda目录为~/.conda/envs/cyxTest/bin/conda即可
 
 #### 5. 关于使用者值班表进行值班的事宜
 
